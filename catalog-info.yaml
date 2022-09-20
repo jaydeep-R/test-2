@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "test-2"
+  description: "test-2 application"
+  annotations:
+    github.com/project-slug: devxp-tech/test-2
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: dev-test-2
+    backstage.io/kubernetes-id: "test-2"
+    sonarqube.org/project-key: "test-2"
+    grafana/tag-selector: "kubernetes"
+    prometheus.io/rule: container_cpu_usage_seconds_total{namespace="test-2"}
+    prometheus.io/alert: all
+  links:
+    - url: https://test-2.diegoluisi.eti.br
+      title: Website
+      icon: Website
+    - url: https://grafana.diegoluisi.eti.br/
+      title: Dashboard
+      icon: dashboard      
+    - url: https://alerts.diegoluisi.eti.br/
+      title: Alerts
+      icon: alert 
+    - url: https://argocd.diegoluisi.eti.br/applications/dev-test-2?resource=
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - "lab"
+    - "service"
+    - "production"
+spec:
+  system: "lab"
+  type:  "service"
+  lifecycle: "production"
+  owner: "engineering"
